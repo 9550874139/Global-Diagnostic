@@ -1,0 +1,9 @@
+RewriteEngine on
+RewriteCond %{HTTPS} off
+
+
+RewriteCond %{HTTP_HOST} ^codelone01.ml$
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{HTTP_HOST} ^wwww.codelone01.ml$ [NC]
+RewriteRule (.*) https://codelone01.ml/$1 [R=301,L]
